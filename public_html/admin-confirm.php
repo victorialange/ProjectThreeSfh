@@ -21,20 +21,6 @@
         $summary = $_POST['summary'];
       }
     }
-    
-    // insert form data into form_data table
-    // use placeholders for insertion query through prepared statements to prevent SQL injection attacks
-    $insertQuery = "INSERT INTO form_data (heading, tripDate, duration, summary)
-    VALUES (?, ?, ?, ?)
-    ON DUPLICATE KEY UPDATE tripDate = VALUES(tripDate), duration = VALUES(duration), summary = VALUES(summary)";
-
-    // stmt - represents prepared statement for insertQuery
-    // prepare() - prepares query for execution by the database server
-    $stmt = $conn->prepare($insertQuery);
-    // bind_param() - binds variables to prepared statement's placeholders (4 question marks) => helps prevent SQL injection attacks (escape values & ensure correct data types); first parameter for data types of the bound variables (string "ssis" represents data types of inserted values - string, string, int, string), parameters after are variables themselves
-    $stmt->bind_param("ssis", $heading, $tripDate, $duration, $summary);
-    // execute() - executes prepared statement with bound parameters; sends parameter values to the database server & performs query (if execution successful, returns true, else returns false)
-    $stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -66,12 +52,46 @@
         <!-- check if insertion/update was successful (affected rows greater than 0)  -->
         <!-- error handling for when error in saving form data to db -->
         <?php 
-          if ($stmt->affected_rows > 0) { 
-            echo "<p>Data has been added to DB successfully</p>";
-            echo '<a href="all-adventures.php">View All Adventures</a>';
-          }
-          else {
-            echo "<p>Error: " . $insertQuery ."</p>";
+          // insert form data into form_data table
+          // use placeholders for insertion query through prepared statements to prevent SQL injection attacks
+          $insertQuery = "INSERT INTO form_data (heading, tripDate, duration, summary)
+          VALUES (?, ?, ?, ?)
+          ON DUPLICATE KEY UPDATE tripDate = VALUES(tripDate), duration = VALUES(duration), summary = VALUES(summary)";
+
+          // stmt - represents prepared statement for insertQuery
+          // prepare() - prepares query for execution by the database server
+          $stmt = $conn->prepare($insertQuery);
+          // bind_param() - binds variables to prepared statement's placeholders (4 question marks) => helps prevent SQL injection attacks (escape values & ensure correct data types); first parameter for data types of the bound variables (string "ssis" represents data types of inserted values - string, string, int, string), parameters after are variables themselves
+          $stmt->bind_param("ssis", $heading, $tripDate, $duration, $summary);
+          // execute() - executes prepared statement with bound parameters; sends parameter values to the database server & performs query (if execution successful, returns true, else returns false)
+          // Execute the prepared statement
+          $stmt->execute();
+
+          // Get the number of affected rows
+          $affectedRows = $stmt->affected_rows;
+
+          // Check if any columns have been updated
+          if ($affectedRows > 0) {
+              if ($affectedRows == 1) {
+                  if ($stmt->insert_id > 0) {
+                      echo "<p>A new record has been inserted.</p>";
+                  }
+              } else {
+                  echo "An existing record has been updated.</p>";
+              }
+              echo '<a href="all-adventures.php">View All Adventures</a>';
+          } else {
+              // No changes were made to the database
+              if ($stmt->insert_id > 0) {
+                  echo "<p>A new record has been inserted.</p>";
+              } else {
+                  if ($stmt->error) {
+                      echo "<p>Error: " . $stmt->error . "</p>";
+                  } else {
+                      echo "<p>No changes were made to the database.</p>";
+                  }
+              }
+              echo '<a href="all-adventures.php">View All Adventures</a>';
           }
         ?>
       </div>
