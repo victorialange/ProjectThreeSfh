@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halifax Canoe and Kayak</title>
+    <!-- importing stylesheet -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <!-- logo  -->
+    <link rel="shortcut icon" type="image/jpg" href="./assets/paddle-blue.jpg">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#mainContent" class="skipLink">Skip to main content</a>
+    <!-- HEADER -->
+    <header>
+      <nav class="mainNav">
+        <!-- hamburger icon img -->
+        <button class="burgerButton" aria-label="click this icon to open the side navigation">
+          <img src="./assets/hamburger.png" alt="burger icon to open navigation menu">
+        </button>
+        <!-- main heading -->
+        <div class="mainHeadingContainer">
+          <h1>Halifax Canoe and Kayak</h1>
+        </div><!-- END main heading -->
+        <!-- logo img -->
+        <div class="logoContainer">
+          <img src="./assets/paddle-white.png" alt="white paddle">
+        </div>
+      </nav>
+    </header>
+
+    <!-- hidden sidenav -->
+    <nav class="sideNavHidden">
+      <ul class="sideNavContent">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Book Trip</a></li>
+        <li><a href="project2-home.php">IT Support</a></li>
+      </ul>
+    </nav>
+    
+    <!-- MAIN -->
+    <main>
+      <!-- HOME PAGE -->
+      <!-- welcome img -->
+      <div class="wrapper">
+        <div class="imgContainer">
+          <img src="./assets/canoe.jpg" alt="canoe on a lake in Canada ">
+          <div class="headingContainer">
+            <h2>Come Experience</h2>
+            <br>
+            <h2>Canada</h2>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- ADVENTURES section -->
+      <section id="mainContent" class="adventures">
+        <!-- WRAPPER -->
+        <div class="wrapper">
+          <h3>Upcoming Adventures</h3>
+          <hr>
+          <!-- HALIFAX container -->
+          <div class="halifaxContainer">
+            <!-- ul for Halifax -->
+            <h4>Halifax</h4>
+            <ul class="halifaxList">
+              <li>Date: 2017-04-12</li>
+              <li>Duration: 4 days</li>
+              <li class="summary">
+                <h5>Summary</h5>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, id doloremque? Quidem nihil non magnam neque enim explicabo repudiandae dolor? Quisquam fugiat soluta odio dolorem eos inventore magnam et laborum!</p>
+              </li>
+            </ul>
+          </div><!-- END halifax container -->
+          <!-- SYDNEY container -->
+          <div class="sydneyContainer">
+            <!-- ul for Sydney -->
+            <h4>Sydney</h4>
+            <ul class="sydneyList">
+              <li>Date: 2017-05-10</li>
+              <li>Duration: 2 days</li>
+              <li class="summary">
+                <h5>Summary</h5>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, id doloremque? Quidem nihil non magnam neque enim explicabo repudiandae dolor? Quisquam fugiat soluta odio dolorem eos inventore magnam et laborum!</p>
+              </li>
+            </ul>
+          </div><!-- END sydney container -->
+        </div><!-- END WRAPPER -->
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <small>Copyright ©️ Halifax Canoe and Kayak 2023</small>
+    </footer>
+    <!-- importing jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- importing js file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
