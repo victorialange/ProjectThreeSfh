@@ -109,6 +109,14 @@
             <li>
               <a href="new-account.php">Create New Account</a>
             </li>
+            <!-- PROJECT 3 - admin - add aventure -->
+            <li>
+              <a href="admin-add.php">Add Adventure</a>
+            </li>
+            <!-- view all adventures -->
+            <li>
+              <a href="all-adventures.php">View All Adventures</a>
+            </li>
           </ul>
         <?php } ?>
 
