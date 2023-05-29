@@ -76,9 +76,9 @@
                       echo "<p>A new record has been inserted successfully into the database.</p>";
                   }
               } else {
-                  echo "An existing record in the database has been updated successfully.</p>";
+                  echo "<p>An existing record in the database has been updated successfully.</p>";
               }
-              echo '<a href="all-adventures.php">View All Adventures</a>';
+              echo '<a href="all-adventures.php" class="allAdventuresLink">View All Adventures</a>';
           } else {
               // No changes were made to the database
               if ($stmt->insert_id > 0) {

@@ -65,7 +65,7 @@ $result = $conn->query($sql);
               echo "</ul>";
             }
           } else {
-            echo "No adventures found.";
+            echo "<p>No adventures found.</p>";
           }
 
           // Close the result set
