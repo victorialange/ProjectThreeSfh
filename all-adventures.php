@@ -61,6 +61,30 @@ $result = $conn->query($sql);
               echo "<h5>Summary</h5>";
               echo "<p>" . $row["summary"] . "</p>";
               echo "</li>";
+              // Update and delete buttons
+              echo "<li class='actions'>";
+              // echo "<a href='update.php?id=" . $row["id"] . "'>Update</a>";
+              echo "<button class='updateButton'>Update</button>";
+              // toggle update form
+              echo "<form class='formHidden addAdventureForm' action='update-adventure.php?id=" . $row["id"] . "' method='post'>";
+              // update heading
+              echo "<label for='updateHeading'>Update heading</label>";
+              echo "<input id='updateHeading' type='text' name='updateHeading' />";
+              // update date
+              echo "<label for='updateDate'>Update date</label>";
+              echo "<input id='updateDate' type='date' name='updateDate' />";
+              // update duration
+              echo "<label for='updateDuration'>Update duration</label>";
+              echo "<input id='updateDuration' type='number' name='updateDuration' />";
+              // update summary
+              echo "<label for='updateSummary'>Update summary</label>";
+              echo "<textarea id='updateSummary' name='updateSummary' type='text' rows='4' maxlength='1000'></textarea>";
+              // submit button redirecting to update confirm page
+              echo "<button type='submit' name='submit' value='submit'>Update</button>";
+              // form end
+              echo "</form>";
+              // echo "<a href='delete.php?id=" . $row["id"] . "'>Delete</a>";
+              echo "</li>";
               // end of ul
               echo "</ul>";
             }

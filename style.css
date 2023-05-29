@@ -373,6 +373,14 @@ h4 a:focus {
   margin: 2.5rem 0;
 }
 
+.formHidden {
+  display: none;
+}
+
+.formActive {
+  display: flex;
+  flex-direction: column;
+}
 /* media query */
 /* 1200px breakpoint (small laptop) */
 @media (max-width: 1200px) {
