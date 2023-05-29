@@ -245,7 +245,15 @@ footer p {
   border-radius: 3px;
 }
 
-button[type="submit"] {
+a.button,
+button.button {
+  display: inline-block;
+  padding: 0.25rem;
+  border-radius: 7.5px;
+}
+
+button[type="submit"],
+.button {
   background-color: #1a618a;
   color: white;
   border: 3px solid #1a618a;
@@ -253,7 +261,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover,
-button[type="submit"]:focus {
+button[type="submit"]:focus,
+.button:focus,
+.button:hover {
   background-color: #154d6d;
 }
 
@@ -350,7 +360,8 @@ h4 a:focus {
 /* logout */
 .logoutMain,
 .adminConfirm,
-.updateAdventure {
+.updateAdventure,
+.deleteAdventure {
   margin-bottom: 15rem;
 }
 
@@ -381,6 +392,7 @@ h4 a:focus {
 .formActive {
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 }
 
 /* error message */
@@ -392,6 +404,28 @@ h4 a:focus {
 .successMessage {
   color: green;
 }
+
+.updateButton {
+  margin-right: 0.25rem;
+  background-color: #23701c;
+  border: 3px solid #23701c;
+}
+
+.updateButton:hover,
+.updateButton:focus {
+  background-color: #13580d;
+}
+
+.deleteButton {
+  background-color: rgb(197, 7, 7);
+  border: 3px solid rgb(146, 3, 3);
+}
+
+.deleteButton:hover,
+.deleteButton:focus {
+  background-color: rgb(146, 3, 3);
+}
+
 
 /* media query */
 /* 1200px breakpoint (small laptop) */
@@ -441,7 +475,8 @@ h4 a:focus {
   }
   .logoutMain,
   .adminConfirm,
-  .updateAdventure {
+  .updateAdventure,
+  .deleteAdventure {
     margin-bottom: 25rem;
   }
   .gifContainer {
