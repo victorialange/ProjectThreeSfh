@@ -348,8 +348,9 @@ h4 a:focus {
 }
 
 /* logout */
-.logoutMain {
-  margin-bottom: 20rem;
+.logoutMain,
+.adminConfirm {
+  margin-bottom: 15rem;
 }
 
 /* message for pages without other content */
@@ -363,6 +364,13 @@ h4 a:focus {
   flex-direction: column;
   width: 50%;
   gap: 0.5rem;
+}
+
+/* all adventures link */
+.allAdventuresLink {
+  text-decoration: underline;
+  display: inline-block;
+  margin: 2.5rem 0;
 }
 
 /* media query */
@@ -411,8 +419,9 @@ h4 a:focus {
   .lostPasswordMain {
     margin-bottom: 17.5rem;
   }
-  .logoutMain {
-    margin-bottom: 27.5rem;
+  .logoutMain,
+  .adminConfirm {
+    margin-bottom: 25rem;
   }
   .gifContainer {
     width: 100%;
