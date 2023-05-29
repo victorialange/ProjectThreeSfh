@@ -7,3 +7,8 @@ $(".burgerButton").on("click", (function() {
 $(".updateButton").on("click", function() {
     $(this).siblings(".formHidden").toggleClass("formActive");
 });
+
+// function to confirm deletion of adventure
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this adventure?");
+}
