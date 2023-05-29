@@ -11,50 +11,12 @@
     <link rel="shortcut icon" type="image/jpg" href="./assets/paddle-blue.jpg">
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#mainContent" class="skipLink">Skip to main content</a>
-    <!-- HEADER -->
-    <header>
-      <nav class="mainNav">
-        <!-- hamburger icon img -->
-        <button class="burgerButton" aria-label="click this icon to open the side navigation">
-          <img src="./assets/hamburger.png" alt="burger icon to open navigation menu">
-        </button>
-        <!-- main heading -->
-        <div class="mainHeadingContainer">
-          <h1>Halifax Canoe and Kayak</h1>
-        </div><!-- END main heading -->
-        <!-- logo img -->
-        <div class="logoContainer">
-          <img src="./assets/paddle-white.png" alt="white paddle">
-        </div>
-      </nav>
-    </header>
-
-    <!-- hidden sidenav -->
-    <nav class="sideNavHidden">
-      <ul class="sideNavContent">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Book Trip</a></li>
-        <li><a href="project2-home.php">IT Support</a></li>
-      </ul>
-    </nav>
-    
+    <?php include './includes/nav-bar.php'; ?>  
     <!-- MAIN -->
     <main>
       <!-- HOME PAGE -->
       <!-- welcome img -->
-      <div class="wrapper">
-        <div class="imgContainer">
-          <img src="./assets/canoe.jpg" alt="canoe on a lake in Canada ">
-          <div class="headingContainer">
-            <h2>Come Experience</h2>
-            <br>
-            <h2>Canada</h2>
-          </div>
-        </div>
-        
-      </div>
+      <?php include './includes/welcome-section.php'; ?>
       
       <!-- ADVENTURES section -->
       <section id="mainContent" class="adventures">
@@ -93,13 +55,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
-      <small>Copyright ©️ Halifax Canoe and Kayak 2023</small>
-    </footer>
-    <!-- importing jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <!-- importing js file -->
-    <script src="script.js"></script>
+    <?php include './includes/footer.php'; ?>
 
 </body>
 </html>

@@ -113,6 +113,10 @@
             <li>
               <a href="admin-add.php">Add Adventure</a>
             </li>
+            <!-- view all adventures -->
+            <li>
+              <a href="all-adventures.php">View All Adventures</a>
+            </li>
           </ul>
         <?php } ?>
 
