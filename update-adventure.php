@@ -86,3 +86,34 @@ if (isset($_GET["id"])) {
 $conn->close();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <title>Update Adventure</title>
+  <!-- logo  -->
+  <link rel="shortcut icon" type="image/jpg" href="./assets/paddle-blue.jpg">
+</head>
+<body>
+  <?php include './includes/nav-bar.php';?>
+  <main>
+    <section class="updateAdventure">
+      <div class="wrapper">
+      <?php
+        // Check if the update was successful
+        // Check if the $message variable is defined
+        if (isset($message)) {
+            // Display the message with the appropriate CSS class
+            echo "<h3 class=\"$messageClass message\" >" . $message . "</h3>";
+        }
+        ?> 
+      </div>
+    </section>
+  </main>
+  <!-- include footer.php for copyright -->
+  <?php include './includes/footer.php'; ?>
+</body>
+</html>

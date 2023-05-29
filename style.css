@@ -349,7 +349,8 @@ h4 a:focus {
 
 /* logout */
 .logoutMain,
-.adminConfirm {
+.adminConfirm,
+.updateAdventure {
   margin-bottom: 15rem;
 }
 
@@ -381,6 +382,17 @@ h4 a:focus {
   display: flex;
   flex-direction: column;
 }
+
+/* error message */
+.errorMessage {
+  color: red;
+}
+
+/* success message */
+.successMessage {
+  color: green;
+}
+
 /* media query */
 /* 1200px breakpoint (small laptop) */
 @media (max-width: 1200px) {
@@ -428,7 +440,8 @@ h4 a:focus {
     margin-bottom: 17.5rem;
   }
   .logoutMain,
-  .adminConfirm {
+  .adminConfirm,
+  .updateAdventure {
     margin-bottom: 25rem;
   }
   .gifContainer {
