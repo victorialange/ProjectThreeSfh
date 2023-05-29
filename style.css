@@ -63,6 +63,11 @@ h4 {
   font-weight: 500;
 }
 
+/* heading - add adventure */
+.formHeading {
+  font-weight: normal;
+}
+
 h3 {
   font-size: 1.8rem;
 }
@@ -352,6 +357,14 @@ h4 a:focus {
   margin-top: 5rem;
 }
 
+/* add adventure form */
+.addAdventureForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 0.5rem;
+}
+
 /* media query */
 /* 1200px breakpoint (small laptop) */
 @media (max-width: 1200px) {
@@ -366,6 +379,9 @@ h4 a:focus {
   }
   .project2homeMain .logoutContainer {
     width: 95%;
+  }
+  .addAdventureForm {
+    width: calc(100% - 17.5rem);
   }
 }
 
@@ -401,6 +417,9 @@ h4 a:focus {
   .gifContainer {
     width: 100%;
   }
+  .addAdventureForm {
+    width: 75%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -425,6 +444,9 @@ h4 a:focus {
   .newAccountMain,
   .lostPasswordMain {
     margin-bottom: 20rem;
+  }
+  .addAdventureForm {
+    width: 95%;
   }
 }
 
