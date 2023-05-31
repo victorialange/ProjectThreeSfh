@@ -63,7 +63,6 @@
           // bind_param() - binds variables to prepared statement's placeholders (4 question marks) => helps prevent SQL injection attacks (escape values & ensure correct data types); first parameter for data types of the bound variables (string "ssis" represents data types of inserted values - string, string, int, string), parameters after are variables themselves
           $stmt->bind_param("ssis", $heading, $tripDate, $duration, $summary);
           // execute() - executes prepared statement with bound parameters; sends parameter values to the database server & performs query (if execution successful, returns true, else returns false)
-          // Execute the prepared statement
           $stmt->execute();
 
           // Get the number of affected rows
@@ -80,13 +79,13 @@
               }
               echo '<a href="all-adventures.php" class="allAdventuresLink">View All Adventures</a>';
           } else {
-              // No changes were made to the database
               if ($stmt->insert_id > 0) {
                   echo "<p>A new record has been inserted successfully into the database.</p>";
               } else {
                   if ($stmt->error) {
                       echo "<p>Error: " . $stmt->error . "</p>";
                   } else {
+                      // No changes were made to the database
                       echo "<p>No changes were made to the database.</p>";
                   }
               }

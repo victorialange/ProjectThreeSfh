@@ -8,11 +8,8 @@
     if (isset($_GET["id"])) {
         $adventureId = $_GET["id"];
 
-    // Handle the delete operation here
-    // Perform necessary database query to delete the adventure
+    // Perform necessary database query to delete adventure
     // Use prepared statements or proper sanitization to prevent SQL injection
-
-    // Example query using mysqli prepared statement
     $stmt = $conn->prepare("DELETE FROM form_data WHERE id=?");
     $stmt->bind_param("i", $adventureId);
 
@@ -30,6 +27,7 @@
         $messageClass = "errorMessage";
     }
     header("refresh:3;url=all-adventures.php");
+    // redirect to all adventures
 
     // Close the prepared statement
     $stmt->close();
@@ -56,7 +54,6 @@ $conn->close();
     <section class="deleteAdventure">
       <div class="wrapper">
       <?php
-        // Check if the update was successful
         // Check if the $message variable is defined
         if (isset($message)) {
             // Display the message with the appropriate CSS class
