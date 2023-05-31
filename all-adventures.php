@@ -38,9 +38,6 @@ $result = $conn->query($sql);
         </div>
         <h3>Upcoming Adventures (Admin)</h2>
         <hr>
-
-        <!-- TODO: decide whether it's better to replace index.html with this file since it is practically the same layout (also need to decide: should placeholder data already exist without it having been inserted into DB via form?) -->
-        <!-- IF SO, might have to add image file upload to form -->
         <div class="dbContainer">
           <?php
           // Check if there is any data
@@ -63,7 +60,6 @@ $result = $conn->query($sql);
               echo "</li>";
               // Update and delete buttons
               echo "<li class='actions'>";
-              // echo "<a href='update.php?id=" . $row["id"] . "'>Update</a>";
               echo "<button class='button updateButton'>Update</button>";
               echo '<a href="delete-adventure.php?id=' . $row["id"] . '" onclick="return confirmDelete()" class="button deleteButton">Delete</a>';
               // toggle update form
@@ -85,7 +81,6 @@ $result = $conn->query($sql);
               echo "<button type='submit' name='submit' value='submit'>Update</button>";
               // form end
               echo "</form>";
-              // echo "<a href='delete.php?id=" . $row["id"] . "'>Delete</a>";
               echo "</li>";
               // end of ul
               echo "</ul>";

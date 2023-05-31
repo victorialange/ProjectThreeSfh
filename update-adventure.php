@@ -13,7 +13,7 @@ if (empty($_POST['updateHeading']) && empty($_POST['updateDate']) && empty($_POS
 }
 // Check if the adventure ID is provided in the query parameter
 if (isset($_GET["id"])) {
-    // Retrieve the adventure ID from the query parameter
+    // Retrieve the adventure ID from the query parameter - GET variable
     $adventureId = $_GET["id"];
 
     // Check if the form is submitted
@@ -24,11 +24,9 @@ if (isset($_GET["id"])) {
         $duration = $_POST['updateDuration'];
         $summary = $_POST['updateSummary'];
 
-        // Handle the update operation here
-        // Perform necessary database query to update the adventure
+        // Perform necessary database query to update adventure
         // Use prepared statements or proper sanitization to prevent SQL injection
-        // Perform the update operation
-        // Build the update query dynamically based on the provided input fields (to avoid null entries when no user input for certain fields)
+        // Build update query dynamically based on the provided input fields (to avoid null entries when no user input for certain fields)
         $updateQuery = "UPDATE form_data SET ";
         $updateParams = [];
         if (!empty($heading)) {
@@ -58,8 +56,8 @@ if (isset($_GET["id"])) {
             $message = "Failed to prepare the update statement due to empty form input.";
             $messageClass = "errorMessage";
             header("refresh:3;url=all-adventures.php");
+            // redirect to all adventures
         } else {
-            // Check if there are parameters to bind and execute the update statement
             // subtract 1 from the count of $updateParams to exclude adventure ID from binding since id is bound separately as an integer, so should not be included in the type definition string
             $stmt->bind_param(str_repeat('s', count($updateParams) - 1).'i', ...$updateParams);
             $stmt->execute();
@@ -70,11 +68,12 @@ if (isset($_GET["id"])) {
                 $message = "Adventure updated successfully!";
                 $messageClass = "successMessage";
             } else {
-                // Update failed, handle the error accordingly (e.g., display an error message)
+                // No rows affected, so no update occurred
                 $message = "Adventure remains unchanged.";
-                // $messageClass = "error-message";
+                // default style since operation neither successful nor error
             }
             header("refresh:3;url=all-adventures.php");
+            // redirect to all adventures
 
             // Close the prepared statement
             $stmt->close();
@@ -103,7 +102,6 @@ $conn->close();
     <section class="updateAdventure">
       <div class="wrapper">
       <?php
-        // Check if the update was successful
         // Check if the $message variable is defined
         if (isset($message)) {
             // Display the message with the appropriate CSS class
